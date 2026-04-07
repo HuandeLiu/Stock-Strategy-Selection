@@ -1,0 +1,49 @@
+#spring:
+#  datasource:
+#    username: root
+#    password: liuhuande123
+#    url: jdbc:mysql://8.148.225.21:3306/stock?useSSL=false&serverTimezone=GMT%2B8&characterEncoding=utf8&useUnicode=true&allowPublicKeyRetrieval=true
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+##    schema:
+##      - classpath:sql/department.sql
+##      - classpath:sql/emp.sql
+##    initialization-mode: always
+##    type: com.alibaba.druid.pool.DruidDataSource
+##   数据源其他配置
+#    initialSize: 5
+#    minIdle: 5
+#    maxActive: 20
+#    maxWait: 60000
+#    timeBetweenEvictionRunsMillis: 60000
+#    minEvictableIdleTimeMillis: 300000
+#    validationQuery: SELECT 1 FROM DUAL
+#    testWhileIdle: true
+#    testOnBorrow: false
+#    testOnReturn: false
+#    poolPreparedStatements: true
+#  jpa:
+#      hibernate:
+#  #     更新或者创建数据表结构
+#        ddl-auto: update
+
+#mybatis:
+#  configuration:
+#    map-underscore-to-camel-case: false
+mybatis-plus:
+#  type-aliases-package: cn.scnu.voice.web.mapper # 别名扫描包
+  mapper-locations: classpath*:/mapper/**/*.xml # Mapper.xml文件地址，默认值
+  global-config:
+    db-config:
+      id-type: auto # 指定 id 的生成方式
+  configuration:
+    map-underscore-to-camel-case: false # 是否开启下划线和驼峰的映射
+    cache-enabled: false # 是否开启二级缓存
+
+springdoc:
+  api-docs:
+    #是否开启文档功能，默认为true，可不配置
+    enabled: true
+  swagger-ui:
+    # 访问ip:host/api，可直接访问Swagger springdoc
+    path: /api
+    enabled: true

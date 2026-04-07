@@ -4,15 +4,15 @@ import pymysql
 import os
 from datetime import datetime
 # 初始化pro接口
-pro = ts.pro_api('b0bfc5263992ca8de7765a398980a64e15e82dc7dad7f40dcf660b36')
+pro = ts.pro_api('api-key')
 
 # 创建一个游标对象
 def getconnect():
     connection = pymysql.connect(
-        host='10.147.20.202',  # 数据库主机地址
+        host='host',  # 数据库主机地址
         # host='localhost',    # 数据库主机地址
         user='root',  # 数据库用户名
-        password='123456',  # 数据库密码
+        password='password',  # 数据库密码
         database='stock',  # 数据库名称
         charset='utf8mb4',  # 字符集
         cursorclass=pymysql.cursors.DictCursor  # 返回字典形式的结果
